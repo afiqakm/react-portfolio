@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+     /* paths */
+    "baseUrl": ".",
+    "paths": {
+        "~components/*": ["src/components/*"],
+        "~assets/*": ["src/assets/*"],
+        "~containers/*": ["src/containers/*"],
+        "~types/*": ["src/types/*"],
+        "~config": ["src/config"],
+        "~apis": ["src/apis"],
+        "~apis/*": ["src/apis/*"],
+        "~hooks/*": ["src/hooks/*"],
+        "~utils/*": ["src/utils/*"],
+        "~contexts/*": ["src/contexts/*"],
+        "~store/*": ["src/store/*"],
+        "~navigation/*": ["src/navigation/*"],
+        "~dummy/*": ["src/dummy/*"],
+    },
+  },
+  "include": ["vite.config.ts"]
+}

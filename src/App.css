@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: 220, 38, 127;
+    --color-primary-dark: 189, 24, 103;
+    --color-primary-light: 255, 122, 171;
+    --color-secondary: 0, 194, 203;
+    --color-secondary-dark: 0, 136, 169;
+    --color-secondary-light: 159, 216, 230;
+    --color-background: 255, 242, 241;
+    --color-background-dark: 237, 237, 237;
+    --color-background-light: 255, 255, 255;
+    --color-text-primary: 0, 0, 0;
+    --color-text-secondary: 0, 0, 0;
+    --color-text-tertiary: 0, 0, 0;
+}
+
+.theme-dark {
+    --color-background: var(--color-background-dark);
+    --color-text-primary: var(--color-text-primary);
+    --color-text-secondary: var(--color-text-secondary);
+    --color-text-tertiary: var(--color-text-tertiary);
+}
+
+.theme-light {
+    --color-background: var(--color-background-light);
+    --color-text-primary: var(--color-text-primary);
+    --color-text-secondary: var(--color-text-secondary);
+    --color-text-tertiary: var(--color-text-tertiary);
+}
+
+body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+}

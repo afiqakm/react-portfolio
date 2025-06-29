@@ -1,0 +1,25 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+        "~components/*": ["src/components/*"],
+        "~assets/*": ["src/assets/*"],
+        "~containers/*": ["src/containers/*"],
+        "~types/*": ["src/types/*"],
+        "~sass/*": ["src/sass/*"],
+        "~config": ["src/config"],
+        "~apis/*": ["src/apis/*"],
+        "~utils/*": ["src/utils/*"],
+        "~redux/*": ["src/lib/redux/*"],
+        "~sagas": ["src/lib/sagas"],
+        "~sagas/*": ["src/lib/sagas/*"],
+        "~navigation/*": ["src/navigation/*"],
+        "~yup": ["src/lib/yup/yup.custom.ts"]
+    }
+  }
+}
