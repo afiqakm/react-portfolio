@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useNavActions } from '~utils/navActions';
 
 const AboutMe = () => {
