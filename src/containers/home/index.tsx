@@ -1,6 +1,5 @@
 import React from 'react';
 
-import LogoAnimation from '~components/LogoAnimation';
 import { useNavActions } from '~utils/navActions';
 
 const Home = () => {
