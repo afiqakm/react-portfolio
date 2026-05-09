@@ -1,39 +1,117 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
 
+/* ── Design tokens ── */
 :root {
-    --color-primary: 220, 38, 127;
-    --color-primary-dark: 189, 24, 103;
-    --color-primary-light: 255, 122, 171;
-    --color-secondary: 0, 194, 203;
-    --color-secondary-dark: 0, 136, 169;
-    --color-secondary-light: 159, 216, 230;
-    --color-background: 255, 242, 241;
-    --color-background-dark: 237, 237, 237;
-    --color-background-light: 255, 255, 255;
-    --color-text-primary: 0, 0, 0;
-    --color-text-secondary: 0, 0, 0;
-    --color-text-tertiary: 0, 0, 0;
+    --accent:  #7ee787;
+    --bg:      #15110d;
+    --panel:   #1d1814;
+    --ink:     #ede2cc;
+    --muted:   rgba(237, 226, 204, 0.55);
+    --dim:     rgba(237, 226, 204, 0.32);
+    --border:  rgba(237, 226, 204, 0.12);
 }
 
-.theme-dark {
-    --color-background: var(--color-background-dark);
-    --color-text-primary: var(--color-text-primary);
-    --color-text-secondary: var(--color-text-secondary);
-    --color-text-tertiary: var(--color-text-tertiary);
+html[data-theme='light'] {
+    --bg:      #f4ecdf;
+    --panel:   #eadfca;
+    --ink:     #1d1814;
+    --muted:   rgba(29, 24, 20, 0.6);
+    --dim:     rgba(29, 24, 20, 0.38);
+    --border:  rgba(29, 24, 20, 0.14);
 }
 
-.theme-light {
-    --color-background: var(--color-background-light);
-    --color-text-primary: var(--color-text-primary);
-    --color-text-secondary: var(--color-text-secondary);
-    --color-text-tertiary: var(--color-text-tertiary);
+/* ── Base ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: rgb(var(--color-background));
-    color: rgb(var(--color-text-primary));
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+
+@media (max-width: 639px) {
+    body { font-size: 12.5px; }
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* ── Terminal-specific responsive helpers ── */
+.term-quickbar {
+    display: flex;
+}
+
+@media (min-width: 640px) {
+    .term-quickbar { display: none; }
+}
+
+.term-main {
+    padding: 24px 28px 100px;
+}
+
+@media (max-width: 639px) {
+    .term-main { padding: 14px 14px 110px; }
+}
+
+.term-ls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2px 24px;
+    margin: 2px 0 4px;
+}
+
+@media (max-width: 639px) {
+    .term-ls-grid { grid-template-columns: 1fr; }
+}
+
+.term-cat-block {
+    padding: 12px 16px;
+}
+
+@media (max-width: 639px) {
+    .term-cat-block { padding: 10px 12px; }
+}
+
+@media (max-width: 379px) {
+    .term-prompt-host { font-size: 12px; }
+}
+
+.term-header {
+    padding: 8px 12px;
+}
+
+@media (min-width: 640px) {
+    .term-header { padding: 12px 18px; }
+}
+
+/* ── Utility ── */
+.hide-scrollbar {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes bk {
+    50% { opacity: 0; }
+}
+.blink {
+    animation: bk 1s steps(1) infinite;
 }
