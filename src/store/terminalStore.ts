@@ -4,9 +4,16 @@ import { Entry } from '~types/terminal';
 import { executeCommand } from '~utils/commands';
 import { portfolioFs } from '~utils/portfolioFs';
 
-const BANNER = `   ▄▖▄▖▄▖▄▖   ▄▖▄ ▖▄▖▄▖▖
-   ▌▌▙▖▐ ▌▌   ▌▌▙▘▛▌▌▌▌
-   ▛▌▌ ▟▖█▌   ▛▌▌▌▌▌▛▌▙▖`;
+const BANNER = `    ___    ______________
+   /   |  / ____/  _/ __ \\
+  / /| | / /_   / // / / /
+ / ___ |/ __/ _/ // /_/ /
+/_/  |_/_/   /___/\\___\\_\\
+    ___    __ __ __  ______    __
+   /   |  / //_//  |/  /   |  / /
+  / /| | / ,<  / /|_/ / /| | / /
+ / ___ |/ /| |/ /  / / ___ |/ /___
+/_/  |_/_/ |_/_/  /_/_/  |_/_____/`;
 
 const INITIAL_SCROLLBACK: Entry[] = [
     { kind: 'text', text: BANNER },
