@@ -4,41 +4,8 @@ import { Entry } from '~types/terminal';
 import { executeCommand } from '~utils/commands';
 import { portfolioFs } from '~utils/portfolioFs';
 
-const BANNER = `                   ######
-                  ##    ##
-                ###      ##
-               ##        ##
-              ##         ##
-             ##          ##
-            ##            #
-           ##            ##
-          ##             ##
-         ##              ##      ###                                ##
-         ##              ##     ###      #     ####                ###
-        ##               #     ###     ##     ## ##               ###
-       ##    ####################  ######   ### ###              ###
-################        ##    ######   #   #######               ##
-      ##                ##    ###      ####      #              ##
-     ##                 #   ###                 ##              ##
-     #                 ## #####                 ##             ##
-    ##         ###     ##   ##                  #              ##
-   ##        ##  ##    #    ###                ##              #
-   ##       #     #   ##    ###                ## ##          ##
-   #      ##      ##  ## ## # ##               ####           ##
-   #     ##       ## ## ##  # ##               #              #
-         #        ##    ##  # ##                             ##
-        #         ##   ##   ###     ##               ##      #
-       #          #    ##           #  ##          ## ##    ##
-      ##   #############           ## ###  ###    ## ###  ####
-  #######        ##   ## #####     #### ###  ## ###### #### ##
-     ##          ##   #######     ####  ##    ###          ##
-    ##           #   ######    ######                      ##
-    #           ##   ##  #######                           ##
-   ##           ##   #                                     #
-   ##           #`;
-
 const INITIAL_SCROLLBACK: Entry[] = [
-    { kind: 'text', text: BANNER },
+    { kind: 'logo' },
     { kind: 'text', text: "welcome. this is Afiq Akmal's portfolio — as a unix shell." },
     { kind: 'text', text: 'afiqakm · afiqakm.dev' },
     { kind: 'text', text: 'type help, or just start with: ls' },

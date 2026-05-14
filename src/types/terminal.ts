@@ -7,4 +7,5 @@ export type Entry =
     | { kind: 'tree';   text: string }
     | { kind: 'help';   items: [string, string][] }
     | { kind: 'cat';    text: string; name: string; path: string[] }
-    | { kind: 'ls';     items: FsNode[]; path: string[] };
+    | { kind: 'ls';     items: FsNode[]; path: string[] }
+    | { kind: 'logo' };

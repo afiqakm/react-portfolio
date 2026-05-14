@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { FsNode } from '~types/fs';
 import { Entry } from '~types/terminal';
 
+import LogoBanner from './LogoBanner';
 import PromptLine from './PromptLine';
 
 interface Props {
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const ScrollbackEntry = ({ entry: e, onPath }: Props) => {
+    if (e.kind === 'logo') return <LogoBanner />;
+
     if (e.kind === 'prompt') return <PromptLine cwd={e.cwd} line={e.line} />;
 
     if (e.kind === 'err') return <div style={{ color: '#ff8c7a' }}>{e.text}</div>;
