@@ -12,7 +12,7 @@ export const useThemeStore = create<ThemeState>()(
     persist(
         (set) => ({
             dark: true,
-            accent: '#7ee787',
+            accent: '#FF7F50',
             setDark: (v) => set({ dark: v }),
             setAccent: (v) => set({ accent: v }),
         }),

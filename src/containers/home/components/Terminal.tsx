@@ -111,7 +111,7 @@ const Terminal = () => {
 
             <QuickCommandBar />
             <StatusBar />
-            <TweaksPanel />
+            {/* <TweaksPanel /> */}
         </div>
     );
 };
