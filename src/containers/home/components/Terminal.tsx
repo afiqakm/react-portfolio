@@ -1,17 +1,18 @@
 import { KeyboardEvent, useEffect, useRef } from 'react';
 
-import { useTerminalStore } from '~store/terminalStore';
-import { useThemeStore } from '~store/themeStore';
-import { FsNode } from '~types/fs';
-import { complete } from '~utils/commands';
-import { portfolioFs } from '~utils/portfolioFs';
 
 import LivePromptInput from './LivePromptInput';
 import QuickCommandBar from './QuickCommandBar';
 import ScrollbackEntry from './ScrollbackEntry';
 import StatusBar from './StatusBar';
 import TerminalHeader from './TerminalHeader';
-import TweaksPanel from './TweaksPanel';
+// import TweaksPanel from './TweaksPanel';
+
+import { portfolioFs } from '~utils/portfolioFs';
+import { complete } from '~utils/commands';
+import { FsNode } from '~types/fs';
+import { useThemeStore } from '~store/themeStore';
+import { useTerminalStore } from '~store/terminalStore';
 
 const Terminal = () => {
     const { cwd, scrollback, input, setInput, runLine, navigateHistory, clearScrollback, pushEntry } = useTerminalStore();
@@ -87,7 +88,7 @@ const Terminal = () => {
                 style={{ flex: 1, overflowY: 'auto' }}
             >
                 <main
-                    className="term-main"
+                    className='term-main'
                     style={{ maxWidth: 1100, margin: '0 auto' }}
                 >
                     {scrollback.map((e, i) => (
@@ -111,7 +112,7 @@ const Terminal = () => {
 
             <QuickCommandBar />
             <StatusBar />
-            <TweaksPanel />
+            {/* <TweaksPanel /> */}
         </div>
     );
 };

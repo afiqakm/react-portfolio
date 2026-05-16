@@ -4,10 +4,11 @@ import { useThemeStore } from '~store/themeStore';
 
 const ACCENTS: { color: string; label: string }[] = [
     { color: '#7ee787', label: 'green' },
-    { color: '#ff7a59', label: 'coral' },
+    { color: '#FF7F50', label: 'coral glow' },
     { color: '#5cc8ff', label: 'sky' },
     { color: '#ffd166', label: 'honey' },
     { color: '#b388ff', label: 'lavender' },
+    { color: '#F5FFFA', label: 'mint cream' },
 ];
 
 const TweaksPanel = () => {
@@ -19,8 +20,8 @@ const TweaksPanel = () => {
             {/* Toggle button */}
             <button
                 onClick={() => setOpen((v) => !v)}
-                data-tweaks-panel=""
-                title="Tweaks"
+                data-tweaks-panel=''
+                title='Tweaks'
                 style={{
                     all: 'unset',
                     position: 'fixed',
@@ -47,7 +48,7 @@ const TweaksPanel = () => {
             {/* Panel */}
             {open && (
                 <div
-                    data-tweaks-panel=""
+                    data-tweaks-panel=''
                     style={{
                         position: 'fixed',
                         bottom: 80,
